@@ -37,7 +37,7 @@ RUN buildDeps=' \
     && git clone https://github.com/ugexe/zef.git \
     && prove -v -e 'raku -I zef/lib' zef/t \
     && perl6 -Izef/lib zef/bin/zef --verbose install ./zef \
-    && zef install Linenoise LWP::Simple\
+    && zef install Test::Meta CheckSocket Test::Util::ServerPort File::Which \
     && rm -rf $tmpdir 
 
 WORKDIR /home/raku
