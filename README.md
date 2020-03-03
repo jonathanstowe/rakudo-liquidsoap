@@ -1,6 +1,6 @@
 # Rakudo Liquidsoap
 
-This provides a docker image that has the Raku programming language built on top of the [Savonet Liquidsoap](https://hub.docker.com/r/savonet/liquidsoap-full) image.
+This provides a docker image that has the Raku programming language built on top of the [Savonet Liquidsoap](https://hub.docker.com/r/savonet/liquidsoap-full) image.  It also has [icecast](http://icecast.org/) and [libshout](https://gitlab.xiph.org/xiph/icecast-libshout/) installed.
 
 The purpose of this image is primarily for testing Raku audio streaming applications.
 
@@ -26,6 +26,12 @@ This also works with `podman` however for some distributions of Linux which impl
     podman run --entrypoint sh -it --privileged -v  .:/home/raku jonathanstowe/rakudo-liquidsoap -c "zef install --deps-only . && zef test --debug -v ."
 
 This image doesn't actually start a liquidsoap daemon ( the `Audio::Liquidsoap` tests start one listening on a new port as needed,) so if you want to create an application using this you will probably derive a new image from this one, install your own dependencies and start the `liquidsoap` yourself.
+
+The icecast configuation is the minimum required for testing, but if you need it you will need to start it yourself  something like:
+
+    docker run --entrypoint sh -t -v  `pwd`:/home/raku jonathanstowe/rakudo-liquidsoap  -c "service icecast2 start && zef install --deps-only . && zef test --debug -v ."
+
+Of course the option is there for you to start it with your own configuation.
 
 ## Support
 
