@@ -4,6 +4,8 @@ This provides a docker image that has the Raku programming language built on top
 
 The purpose of this image is primarily for testing Raku audio streaming applications.
 
+It should track the latest released version of `liquidsoap`.
+
 ## Building
 
 To build it locally you can just do:

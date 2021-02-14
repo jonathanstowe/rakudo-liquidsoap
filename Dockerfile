@@ -1,8 +1,8 @@
-FROM savonet/liquidsoap:master
+FROM savonet/liquidsoap:v1.4.3
 
 USER root
 
-LABEL version="1.0.2" maintainer="jns@gellyfish.co.uk"
+LABEL version="1.0.3" maintainer="jns@gellyfish.co.uk"
 
 RUN groupadd -r raku && useradd -m -k -r -g  raku raku
 
