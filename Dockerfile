@@ -1,12 +1,12 @@
-FROM savonet/liquidsoap:v1.4.3
+FROM savonet/liquidsoap:v1.4.4
 
 USER root
 
-LABEL version="1.0.3" maintainer="jns@gellyfish.co.uk"
+LABEL version="1.0.4" maintainer="jns@gellyfish.co.uk"
 
 RUN groupadd -r raku && useradd -m -k -r -g  raku raku
 
-ARG rakudo_version=2020.12
+ARG rakudo_version=2021.03
 ENV rakudo_version=${rakudo_version}
 ENV PATH=$PATH:/usr/share/perl6/site/bin
 
