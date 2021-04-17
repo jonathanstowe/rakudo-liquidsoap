@@ -1,6 +1,6 @@
 # Rakudo Liquidsoap
 
-This provides a docker image that has the Raku programming language built on top of the [Savonet Liquidsoap](https://hub.docker.com/r/savonet/liquidsoap-full) image.  It also has [icecast](http://icecast.org/) and [libshout](https://gitlab.xiph.org/xiph/icecast-libshout/) installed.
+This provides a docker image that has the Raku programming language built on top of the [Savonet Liquidsoap](https://hub.docker.com/r/savonet/liquidsoap) image.  It also has [icecast](http://icecast.org/) and [libshout](https://gitlab.xiph.org/xiph/icecast-libshout/) installed.
 
 The purpose of this image is primarily for testing Raku audio streaming applications.
 
@@ -14,7 +14,7 @@ To build it locally you can just do:
 
 This should work equally well with `podman` which may be preferred on some Linux distributions.
 
-The liquidsoap-full image is quite large (the liquidsoap application has a lot of dependencies,) so this may take some time.
+The liquidsoap image is quite large (the liquidsoap application has a lot of dependencies,) so this may take some time.
 
 ## Usage
 
@@ -37,7 +37,7 @@ Of course the option is there for you to start it with your own configuation.
 
 ## Support
 
-Really this needs some other things in it to be universally useful (such as `icecast`, ) and I may get round to adding them at some point but if there is something you need changing please make an issue on [github](https://github.com/jonathanstowe/rakudo-liquidsoap/issues)
+Really this needs some other things in it to be universally useful, and I may get round to adding them at some point but if there is something you need changing please make an issue on [github](https://github.com/jonathanstowe/rakudo-liquidsoap/issues)
 
 ## Licence
 
