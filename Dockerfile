@@ -2,11 +2,11 @@ FROM savonet/liquidsoap:v1.4.4
 
 USER root
 
-LABEL version="1.0.4" maintainer="jns@gellyfish.co.uk"
+LABEL version="1.0.5" maintainer="jns@gellyfish.co.uk"
 
 RUN groupadd -r raku && useradd -m -k -r -g  raku raku
 
-ARG rakudo_version=2021.03
+ARG rakudo_version=2021.05
 ENV rakudo_version=${rakudo_version}
 ENV PATH=$PATH:/usr/share/perl6/site/bin
 
@@ -43,7 +43,7 @@ RUN tmpdir="$(mktemp -d)" \
     && cd $tmpdir \
     && git clone https://github.com/ugexe/zef.git \
     && prove -v -e 'raku -I zef/lib' zef/t \
-    && perl6 -Izef/lib zef/bin/zef --verbose install ./zef \
+    && raku -Izef/lib zef/bin/zef --verbose install ./zef \
     && rm -rf $tmpdir 
 
 RUN zef install --/test --test-depends Test::META CheckSocket Test::Util::ServerPort File::Which AccessorFacade LibraryCheck
