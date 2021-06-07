@@ -1,8 +1,8 @@
-FROM savonet/liquidsoap:v1.4.4
+FROM docker.io/savonet/liquidsoap:v2.0.0-beta1
 
 USER root
 
-LABEL version="1.0.5" maintainer="jns@gellyfish.co.uk"
+LABEL version="2.0.0-beta1" maintainer="jns@gellyfish.co.uk"
 
 RUN groupadd -r raku && useradd -m -k -r -g  raku raku
 
@@ -13,6 +13,7 @@ ENV PATH=$PATH:/usr/share/perl6/site/bin
 RUN id
 
 RUN buildDeps=' \
+        curl \
         gcc \
         libc6-dev \
         libencode-perl \
