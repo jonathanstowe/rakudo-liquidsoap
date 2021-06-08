@@ -1,4 +1,4 @@
-FROM savonet/liquidsoap:v1.4.4
+FROM docker.io/savonet/liquidsoap:main
 
 USER root
 
@@ -13,6 +13,7 @@ ENV PATH=$PATH:/usr/share/perl6/site/bin
 RUN id
 
 RUN buildDeps=' \
+        curl \
         gcc \
         libc6-dev \
         libencode-perl \
